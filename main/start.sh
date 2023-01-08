@@ -1,9 +1,3 @@
-export PORT=${PORT-8080}
-export PATH_vless=${PATH_vless-/api-vless}
-export PATH_trojan=${PATH_trojan-/api-trojan}
-export PATH_vmess=${PATH_vmess-/api-vmess}
-
-
 tar -xzvf page.tar.gz
 
 chmod +x ./caddy
@@ -25,13 +19,13 @@ echo '
                 "decryption": "none",
                 "fallbacks": [
                     {
-                        "path": "'${PATH_vless}'",
+                        "path": "/api-vless",
                         "dest": 4001
                     },{
-                        "path": "'${PATH_trojan}'",
+                        "path": "/api-trojan",
                         "dest": 4002
                     },{
-                        "path": "'${PATH_vmess}'",
+                        "path": "/api-vmess",
                         "dest": 4003
                     }
                 ]
@@ -55,7 +49,7 @@ echo '
                 "network": "ws",
                 "security": "none",
                 "wsSettings": {
-                    "path": "'${PATH_vless}'"
+                    "path": "/api-vless"
                 }
             }
         },{
@@ -73,7 +67,7 @@ echo '
                 "network": "ws",
                 "security": "none",
                 "wsSettings": {
-                    "path": "'${PATH_trojan}'"
+                    "path": "/api-trojan"
                 }
             }
         },{
@@ -91,7 +85,7 @@ echo '
                 "network": "ws",
                 "security": "none",
                 "wsSettings": {
-                    "path": "'${PATH_vmess}'"
+                    "path": "/api-vmess"
                 }
             }
         }
