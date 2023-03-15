@@ -1,8 +1,9 @@
 {
   "name": "node_shell_xray",
   "version": "1.0.0",
+  "main": "node_shell.js",
   "scripts": {
-    "start": "node node_shell.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
     "@architect/sandbox": "^5.3.4"
